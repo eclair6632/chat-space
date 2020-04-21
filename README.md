@@ -24,35 +24,36 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string| |
+|name|string||
 |email|string|null: false|
 |password|string|null: false|
 
 ## Association
-- has_many :messeage
-- has_many :group-users
+- has_many :messeages
+- has_many :groups-users
 - has_many :groups, through: :groups_users
 
-## messeageグループ
+## messeagesグループ
 |Column|Type|Options|
 |------|----|-------|
-|messeage|text|null:false|
-|image|integer|null:false|
-|user_id|text|null:false, foreign_key: true|
-|group_id|integer|null:false, foreign_key: true|
+|messeage|text||
+|image|integer||
+|user_id|references|null:false, foreign_key: true|
+|group_id|references|null:false, foreign_key: true|
 
 ## Associationグループ
-- belong to :user
-- belong to :group
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|integer|null: false|
+|name|text|null: false|
 
 ## Association
-- how many groups_users
-- how many messeage
+- how_many groups_users
+- how_many users, through: groups_users
+- how_many messeages
 
 ## groups_usersテーブル
 |Column|Type|Options|
