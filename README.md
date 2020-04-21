@@ -48,12 +48,12 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 
 ## Association
-- how_many groups_users
-- how_many users, through: groups_users
-- how_many messeages
+- has_many groups_users
+- has_many users, through: groups_users
+- has_many messeages
 
 ## groups_usersテーブル
 |Column|Type|Options|
