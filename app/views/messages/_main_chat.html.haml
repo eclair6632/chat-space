@@ -1,0 +1,47 @@
+.chatmain
+  .chatmain__ginfo
+    .chatmain__ginfo__box
+      .chatmain__ginfo__box__leftbox
+        %h1.chatmain__ginfo__box__leftbox__gname test
+        %ul.chatmain__ginfo__box__leftbox__gmember
+          Member：
+          %li.chatmain__ginfo__box__leftbox__gmember__list test
+      .chatmain__ginfo__box__edit
+        = link_to '#' do
+          .chatmain__ginfo__box__edit--btn Edit
+  .chatmain__mlog
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+    .chatmain__mlog__box
+      .chatmain__mlog__box__name test
+      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
+    .chatmain__mlog__m Good night!
+  .chatmain__mform
+    %form.chatmain__mform__box
+      %input.chatmain__mform__box__newm{type: "text", placeholder: "type a message"}
+      %label.chatmain__mform__box__image
+        = icon('far', 'image', class: "chatmain__mform__input__image--icon")
+        %input.chatmain__mform__box__image__inputfile{type: "file"}
+    %input.chatmain__mform__submit{type: "submit", value: "Send"}
