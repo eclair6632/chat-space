@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+$sidebar-color: #253141;
+$white-color: #ffffff;
+$btn-color1: #38aef0;
+
+.wrapper {
+  display: flex;
+
+  .chatside {
+    background-color: $sidebar-color;
+    height: 100vh;
+    width: 300px;
+    &__uinfo {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__field {
+        background-color: $sidebar-color;
+        height: 20px;
+        width: 260px;
+        display: flex;
+        justify-content: space-between;
+        &__user {
+          color: $white-color;
+          font-weight: bold;
+        }
+        &__opt {
+          width: 60px;
+          text-align: right;
+          &__new {
+            text-decoration: none;
+            color: $white-color;
+            padding-right: 5px;
+            &__icon {
+            }
+          }
+          &__set {
+            text-decoration: none;
+            color: $white-color;
+            &__icon {
+            }
+          }
+        }
+      }
+    }
+    &__ginfo {
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      overflow: scroll;
+      &__field{
+        width: 260px;
+        margin: 20px 20px 40px;
+        color: $white-color;
+        &__name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__currentm {
+          font-size: 11px;
+        }
+      }
+  }
+}
+
+  .chatmain {
+    background-color: $white-color;
+    width: calc(100vw - 300px);
+    height: 100hw;
+    &__ginfo {
+      background-color: $white-color;
+      height: 100px;
+      border-bottom: solid 1px #eee;
+      padding: 0 40px;
+      &__box {
+        display: flex;
+        justify-content: space-between;
+        &__leftbox {
+          margin-top: 35px;
+          h1 {
+            margin-bottom: 15px;
+            font-size: 20px;
+          }
+          &__gname {
+          }
+          &__gmember {
+            font-size: 12px;
+            color: #999999;
+            display: flex;
+            &__list {
+            }
+          }
+        }
+        &__edit {
+          border: 1px $btn-color1 solid;
+          padding: 0 20px;
+          margin-top: 30px;
+          height: 40px;
+          line-height: 40px;
+          a {
+            text-decoration: none;
+            color: $btn-color1;
+          }
+          &--btn {
+
+          }
+        }
+      }
+    }
+    
+    &__mlog {
+      background-color: #fafafa;
+      height: calc(100vh - 100px - 90px);
+      padding: 35px 0 0 40px;
+      overflow: scroll;
+      &__box {
+        display: flex;
+        &__name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333333;
+          padding-bottom: 12px;
+        }
+        &__date {
+          font-size: 12px;
+          color: #999999;
+          margin-left: 12px;
+        }
+      }
+      &__m {
+        font-size: 14px;
+        color: #434A54;
+        padding-bottom: 46px;
+      }
+    }
+    &__mform {
+      background-color: #d2d2d2;
+      height: 90px;
+      padding: 20px 40px;
+      display: flex;
+      &__box {
+        display: flex;
+        position: relative;
+        width: 100%;
+        &__newm {
+          height: 50px;
+          padding: 0 40px 0 10px;
+          width: 100%;
+          border: #d2d2d2;
+        }
+        &__image {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.3rem;
+          cursor: pointer;
+          &__inputfile {
+            display: none;
+          }
+        }
+        &__submit {
+          height: 50px;
+          width: 100px;
+          margin-left: 15px;
+        }
+      }
+      &__submit {
+        background-color: $btn-color1;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        padding: 0 30px;
+        font-size: 16px;
+        color: $white-color;
+      }
+    }
+  }
+}
