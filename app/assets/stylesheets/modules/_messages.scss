@@ -2,15 +2,11 @@
   box-sizing: border-box;
 }
 
-$sidebar-color: #253141;
-$white-color: #ffffff;
-$btn-color1: #38aef0;
-
 .wrapper {
   display: flex;
 
   .chatside {
-    background-color: $sidebar-color;
+    background-color: $sidebar-u-backgroundcolor;
     height: 100vh;
     width: 300px;
     &__uinfo {
@@ -19,7 +15,7 @@ $btn-color1: #38aef0;
       align-items: center;
       justify-content: center;
       &__field {
-        background-color: $sidebar-color;
+        background-color: $sidebar-u-backgroundcolor;
         height: 20px;
         width: 260px;
         display: flex;
@@ -48,7 +44,7 @@ $btn-color1: #38aef0;
       }
     }
     &__ginfo {
-      background-color: #2f3e51;
+      background-color: $sidebar-g-backgroundcolor;
       height: calc(100vh - 100px);
       overflow: scroll;
       &__field{
@@ -88,7 +84,7 @@ $btn-color1: #38aef0;
           }
           &__gmember {
             font-size: 12px;
-            color: #999999;
+            color: $subinfo-color;
             display: flex;
             &__list {
             }
@@ -105,14 +101,13 @@ $btn-color1: #38aef0;
             color: $btn-color1;
           }
           &--btn {
-
           }
         }
       }
     }
     
     &__mlog {
-      background-color: #fafafa;
+      background-color: $mlog-backgroundcolor;
       height: calc(100vh - 100px - 90px);
       padding: 35px 0 0 40px;
       overflow: scroll;
@@ -126,7 +121,7 @@ $btn-color1: #38aef0;
         }
         &__date {
           font-size: 12px;
-          color: #999999;
+          color: $subinfo-color;
           margin-left: 12px;
         }
       }
