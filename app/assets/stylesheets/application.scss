@@ -1,6 +1,9 @@
 // 追加する全てのスタイルシートはapplication.scssから@importを使って読み込む。
 @import "reset";
+@import "config/colors";
 @import "config/variable";
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
+@import "modules/flash";
