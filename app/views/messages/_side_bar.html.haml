@@ -1,12 +1,13 @@
 .chatside
   .chatside__uinfo
     .chatside__uinfo__field
-      .chatside__uinfo__field__user test
+      .chatside__uinfo__field__user 
+        =current_user.name 
       .chatside__uinfo__field__opt
         = link_to "#", class: "chatside__uinfo__field__opt__new" do
           = icon('fa', 'edit', class: "chatside__uinfo__field__opt__new--icon")
           %span<>
-        = link_to "#", class: "chatside__uinfo__field__opt__set" do
+        = link_to edit_user_path(current_user) , class: "chatside__uinfo__field__opt__set" do
           = icon('fa', 'cog', class: "chatside__uinfo__field__opt__set--icon")
   .chatside__ginfo
     .chatside__ginfo__field
