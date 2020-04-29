@@ -1,42 +1,19 @@
 .chatside
   .chatside__uinfo
     .chatside__uinfo__field
-      .chatside__uinfo__field__user 
+      .chatside__uinfo__field__user
         =current_user.name 
       .chatside__uinfo__field__opt
-        = link_to "#", class: "chatside__uinfo__field__opt__new" do
+        = link_to new_group_path , class: "chatside__uinfo__field__opt__new" do
           = icon('fa', 'edit', class: "chatside__uinfo__field__opt__new--icon")
           %span<>
         = link_to edit_user_path(current_user) , class: "chatside__uinfo__field__opt__set" do
           = icon('fa', 'cog', class: "chatside__uinfo__field__opt__set--icon")
   .chatside__ginfo
     .chatside__ginfo__field
-      .chatside__ginfo__field__name test1
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test2
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test3
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test4
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test5
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test6
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test7
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test8
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test9
-      .chatside__ginfo__field__currentm nothing
-    .chatside__ginfo__field
-      .chatside__ginfo__field__name test10
-      .chatside__ginfo__field__currentm nothing
+      - current_user.groups.each do |group|
+        .chatside__ginfo__field__name 
+          = link_to "#" do
+            .chatside__ginfo__field__name__gname
+              = group.name
+            .chatside__ginfo__field__name__currentm nothing
