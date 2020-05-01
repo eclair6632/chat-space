@@ -33,10 +33,10 @@ Things you may want to cover:
 - has_many :group_users
 - has_many :groups, through: :group_users
 
-## messeagesグループ
+## messagesグループ
 |Column|Type|Options|
 |------|----|-------|
-|messeage|text||
+|content|text||
 |image|integer||
 |user_id|references|null:false, foreign_key: true|
 |group_id|references|null:false, foreign_key: true|

@@ -13,7 +13,8 @@
     .chatside__ginfo__field
       - current_user.groups.each do |group|
         .chatside__ginfo__field__name 
-          = link_to "#" do
+          = link_to group_messages_path(group) do
             .chatside__ginfo__field__name__gname
               = group.name
-            .chatside__ginfo__field__name__currentm nothing
+            .chatside__ginfo__field__name__currentm 
+              = group.show_last_message

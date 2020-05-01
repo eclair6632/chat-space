@@ -32,6 +32,7 @@ class GroupsController < ApplicationController
   private
   def group_params
   # 配列に対して保存を許可する場合は、キーの名称とバリューに「[]」と記述
+  # グループモデルのユーザー名、所属する複数のユーザーIDのみ受け取る。
     params.require(:group).permit(:name, user_ids: [])
   end
 
