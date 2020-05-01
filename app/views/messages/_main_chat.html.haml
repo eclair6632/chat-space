@@ -2,46 +2,24 @@
   .chatmain__ginfo
     .chatmain__ginfo__box
       .chatmain__ginfo__box__leftbox
-        %h1.chatmain__ginfo__box__leftbox__gname test
+        %h3.chatmain__ginfo__box__leftbox__gname
+          = @group.name
         %ul.chatmain__ginfo__box__leftbox__gmember
           Member：
-          %li.chatmain__ginfo__box__leftbox__gmember__list test
+          %li.chatmain__ginfo__box__leftbox__gmember__list
+            - @group.users.each do |user|
+              = user.name
       .chatmain__ginfo__box__edit
-        = link_to '#' do
+        = link_to edit_group_path(@group) do
           .chatmain__ginfo__box__edit--btn Edit
   .chatmain__mlog
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
-    .chatmain__mlog__box
-      .chatmain__mlog__box__name test
-      .chatmain__mlog__box__date 2020/04/25(Sat) 22:56:59
-    .chatmain__mlog__m Good night!
+    = render @messages
   .chatmain__mform
-    %form.chatmain__mform__box
-      %input.chatmain__mform__box__newm{type: "text", placeholder: "type a message"}
-      %label.chatmain__mform__box__image
-        = icon('far', 'image', class: "chatmain__mform__input__image--icon")
-        %input.chatmain__mform__box__image__inputfile{type: "file"}
-    %input.chatmain__mform__submit{type: "submit", value: "Send"}
+    .chatmain__mform__box
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "chatmain__mform__box__newm", placeholder: 'type a message'
+        .chatmain__mform__box__image
+          =f.label :image do
+            = icon('far', 'image', class: "chatmain__mform__input__image--icon")
+            = f.file_field :image, class: "chatmain__mform__box__image__inputfile"
+        = f.submit "Send", class: "chatmain__mform__submit"
