@@ -1,10 +1,11 @@
 .chatmain__mlog__box
-  .chatmain__mlog__box__name
-    = message.user.name
-  .chatmain__mlog__box__date
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.chatmain__mlog__m
-  - if message.content.present?
-    %p.chatmain__mlog__m__content
-      = message.content
-  = image_tag message.image.url, class: "chatmain__mlog__m__image" if message.image.present?
+  .chatmain__mlog__box__uinfo
+    .chatmain__mlog__box__uinfo__name
+      = message.user.name
+    .chatmain__mlog__box__uinfo__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chatmain__mlog__box__m
+    - if message.content.present?
+      %p.chatmain__mlog__box__m__content
+        = message.content
+    = image_tag message.image.url, class: "chatmain__mlog__box__m__image" if message.image.present?
